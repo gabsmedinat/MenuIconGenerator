@@ -118,7 +118,6 @@ public class Main extends Application {
 				while(itListeTemporaire.hasNext()) {
 					type tp = itListeTemporaire.next();
 					Icone nvoIcone = new Icone(tp);
-					System.out.println("Ajouté: "+nvoIcone.hashCode()); // VOYONS
 					listeIconesAjoutes.add(nvoIcone.getName());                  /// LISTE AVEC ICONES
 					VBox iconeGenere = nvoIcone.genererIcone();
 					panneauIcones.getChildren().add(iconeGenere);
@@ -131,21 +130,18 @@ public class Main extends Application {
 		
 		btnEnlever.setOnMouseClicked(event ->{ 
 			int idClique = ic.getClickedID();
-			System.out.println("CLICK : " + idClique);
 			ArrayList<String> clonListe = new ArrayList<String>();
 			clonListe.addAll(listeIconesAjoutes);
 			for(String i : clonListe) {
 				
 				if(i.hashCode() == idClique) {
-//					System.out.println("Le bouton appuyé est: "+ i );
-//					System.out.println("L'index est: " + listeIconesAjoutes.indexOf(i));
+
 					panneauIcones.getChildren().remove(clonListe.indexOf(i));
 					rajouterElements(i);
 					listeIconesAjoutes.remove(i);
 				}
 			}
-//			listeObservableGauche.add(type.)
-//			System.out.println(listeIconesAjoutes);
+
 			
 		});
 	

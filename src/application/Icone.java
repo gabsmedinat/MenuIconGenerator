@@ -99,10 +99,8 @@ public class Icone {
 		
 		// EVENEMENT
 		icone.setOnMouseClicked(event ->{
-			//System.out.println("Vous avez cliqué sur l'icone "+txtIcone);
 			icone.requestFocus();
 			
-			//System.out.println("Je suis bouton et mon hashCode est : " + this.hashCode());
 			clickedID = this.hashCode();
 		});
 		return icone;
